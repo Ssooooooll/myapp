@@ -11,12 +11,44 @@ public class Main {
         // student.setStudentId("1");
         // student.setStudentName("이순신");
 
-        ApplicationContext context =
-            new ClassPathXmlApplicationContext("Beans.xml");
-        Student student =
-            context.getBean("student", Student.class);
-            student.setStudentId("2");
-            student.setStudentName("강감찬");
-            System.out.println(student.getStudentName());
+        // ApplicationContext context =
+        //     new ClassPathXmlApplicationContext("Beans.xml");
+        // Student student =
+        //     context.getBean("student", Student.class);
+        //     student.setStudentId("2");
+        //     student.setStudentName("강감찬");
+        //     System.out.println(student.getStudentName());
+
+    //     Address address = new Address();
+    //     address.setLocation("Seoul");
+    //     Employee employee = new Employee();
+    //     employee.setName("세종대왕");
+    //     employee.setAddress(address);
+    //     employee.displayInfo();
+        //    ApplicationContext context =
+        //         new ClassPathXmlApplicationContext("Beans.xml");
+        //     Employee employee =
+        //         context.getBean("employee", Employee.class);
+        //         employee.setName("이순신");
+        //     Address address =
+        //         context.getBean("address", Address.class);
+        //         // address.setLocation("Daegu");
+        //         // employee.setAddress(address);
+        //     employee.displayInfo();
     }
 }
+
+interface Database {}
+class MySql implements Database{}
+class Oracle implements Database{}
+
+MySql mySql = new MySql();
+Oracle oracle = new Oracle();
+Database db = mySql;
+Database db2 = oracle;
+
+void DbOpen(Database db) {}
+
+DbOpen(mySql);
+DbOpen(oracle);
+
